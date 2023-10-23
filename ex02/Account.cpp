@@ -22,6 +22,9 @@ void printTimeStump(void) {
 
 Account::Account(int initial_deposit) {
   //
+  // initialize variables
+  this->_nbDeposits = 0;
+  this->_nbWithdrawals = 0;
   this->_accountIndex = this->_nbAccounts;
   this->_nbAccounts += 1;
   this->_amount = initial_deposit;
@@ -88,4 +91,4 @@ void Account::makeDeposit(int deposit) {
   _totalNbDeposits += this->_nbDeposits; // update total number of deposits
 }
 
-int Account::checkAmount(void) const { return 0; }
+int Account::checkAmount(void) const { return _amount; }
