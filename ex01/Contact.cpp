@@ -1,3 +1,4 @@
+#include "Contact.hpp"
 #include "PhoneBook.hpp"
 
 Contact::Contact(void) {}
@@ -24,22 +25,6 @@ void Contact::printContacts(int i) {
   return;
 }
 
-// void Contact::printContactById() {
-//   if (this->_firstName.empty() && this->_lastName.empty() &&
-//       this->_nickname.empty() && this->_phoneNumber.empty() &&
-//       this->_darkestSecret.empty()) {
-//     return;
-//   }
-//   std::cout << GREEN << "Contact Details" << RESET << std::endl;
-//   std::cout << "First Name: " << this->_firstName << std::endl;
-//   std::cout << "Last Name: " << this->_lastName << std::endl;
-//   std::cout << "Nickname: " << this->_nickname << std::endl;
-//   std::cout << "Phone Number: " << this->_phoneNumber << std::endl;
-//   std::cout << UNDERLINE << "Darkest Secret: " << this->_darkestSecret <<
-//   RESET
-//             << std::endl;
-// }
-
 void Contact::printContactById() {
   if (this->_firstName.empty() && this->_lastName.empty() &&
       this->_nickname.empty() && this->_phoneNumber.empty() &&
@@ -48,25 +33,20 @@ void Contact::printContactById() {
     return;
   }
 
-  std::cout << GREEN << "Contact Details" << RESET << std::endl;
-  std::cout << std::left; // Set the alignment to left for field names
-  std::cout << std::setw(15) << "First Name:" << this->_firstName << std::endl;
-  std::cout << std::setw(15) << "Last Name:" << this->_lastName << std::endl;
-  std::cout << std::setw(15) << "Nickname:" << this->_nickname << std::endl;
-  std::cout << std::setw(15) << "Phone Number:" << this->_phoneNumber
-            << std::endl;
-
-  // Reset the alignment to the default (right) for the last line
+  std::cout << "\t" << GREEN << "Contact Details" << RESET << std::endl;
+  std::cout << std::left;
+  printKeyVal("First Name", this->_firstName);
+  printKeyVal("Last Name", this->_lastName);
+  printKeyVal("Nickname Name", this->_nickname);
+  printKeyVal("Phone Number", this->_phoneNumber);
+  printKeyVal("Darkest Secret", this->_darkestSecret);
   std::cout << std::right;
-  std::cout << UNDERLINE << "Darkest Secret:" << this->_darkestSecret << RESET
-            << std::endl;
 }
 
 bool Contact::valiPhoneNumber(std::string phoneNumber) {
-  int phone;
-  if (phoneNumber.length() != 10) {
-    std::cout << RED << "Invalid Phone Number: Length should be 10" << RESET
-              << std::endl;
+  int phone = 0;
+  if (phoneNumber.length() <= 9) {
+    std::cout << RED << "Invalid Phone Number: length" << RESET << std::endl;
     return (false);
   }
   // vlaidate if phone is a number
@@ -77,4 +57,9 @@ bool Contact::valiPhoneNumber(std::string phoneNumber) {
     return (false);
   }
   return true;
+}
+
+void printKeyVal(std::string key, std::string value) {
+  std::cout << "\t" << std::setw(15) << key << std::setw(5) << ":" << value
+            << std::endl;
 }

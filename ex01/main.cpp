@@ -26,10 +26,3 @@ int main(void) {
   }
   return 0;
 }
-/*
- *
- * check if the index is there, and not empty, then print it. else shouw its not
- * there
- * and finishe the program
- *
- * */

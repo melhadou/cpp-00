@@ -34,8 +34,6 @@ public:
   int checkAmount(void) const;
   void displayStatus(void) const;
 
-  Account(void);
-
 private:
   static int _nbAccounts;
   static int _totalAmount;
@@ -48,6 +46,8 @@ private:
   int _amount;
   int _nbDeposits;
   int _nbWithdrawals;
+
+  Account(void);
 };
 
 // ************************************************************************** //

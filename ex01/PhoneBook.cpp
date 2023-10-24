@@ -1,10 +1,10 @@
 #include "PhoneBook.hpp"
+#include <cctype>
 
-PhoneBook::PhoneBook() {}
+PhoneBook::PhoneBook() { this->idx = 0; }
 
 void PhoneBook::addContact() {
   int idContact = this->idx % 8;
-  std::cout << this->idx << " " << idContact << std::endl;
   this->contacts[idContact % 8].init();
   this->idx++;
   std::cout << "Contact Saved Successfully" << std::endl;

@@ -22,4 +22,5 @@ public:
 
 std::string getInput(std::string prompt);
 std::string trunc(std::string str);
+void printKeyVal(std::string key, std::string value);
 #endif
