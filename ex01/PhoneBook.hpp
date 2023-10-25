@@ -14,11 +14,12 @@
 
 class PhoneBook {
 private:
-  int idx; // value = 0
+  int idx;
   Contact contacts[8];
 
 public:
   PhoneBook(void);
+  ~PhoneBook(void);
   void addContact(void);
   void printContacts(void);
   void searchForContact(void);

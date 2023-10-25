@@ -44,9 +44,10 @@ void Contact::printContactById() {
 }
 
 bool Contact::valiPhoneNumber(std::string phoneNumber) {
-  int phone = 0;
+  long phone = 0;
   if (phoneNumber.length() <= 9) {
-    std::cout << RED << "Invalid Phone Number: length" << RESET << std::endl;
+    std::cout << RED << "Invalid Phone Number: length > 9" << RESET
+              << std::endl;
     return (false);
   }
   // vlaidate if phone is a number

@@ -1,7 +1,7 @@
 #include "PhoneBook.hpp"
-#include <cctype>
 
 PhoneBook::PhoneBook() { this->idx = 0; }
+PhoneBook::~PhoneBook() {}
 
 void PhoneBook::addContact() {
   int idContact = this->idx % 8;

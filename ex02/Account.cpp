@@ -10,7 +10,7 @@ int Account::_totalNbWithdrawals = 0;
 
 void printTimeStump(void) {
   time_t currentTime;
-  char buffer[17];
+  char buffer[80];
   struct tm *localTime;
 
   time(&currentTime);
